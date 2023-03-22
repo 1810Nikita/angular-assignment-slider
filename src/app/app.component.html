@@ -1,0 +1,48 @@
+<div class="full-page">
+
+  <!--Crousal section-->
+  <h1>Angular carousel</h1><br>
+  <!--add carousel element (used Angular Powered bootstrap)-->
+  <div class="carousel">
+    <ngb-carousel *ngIf="slideForm">
+      <ng-template ngbSlide  *ngFor="let slide of slides; let index = index;">
+        <div class="picsum-img-wrapper">
+          <img class="image" [src]="slide.imageUrl" alt="Slide {{index + 1}}" />
+        </div>
+        <div class="carousel-caption">
+          <h3>{{slide.caption}}</h3>
+        </div>
+      </ng-template>  
+    </ngb-carousel>
+  </div><br><br>
+
+  <!--delete silde Section-->
+  <div class="slide-list"><h3>Added slides</h3><br>
+    <!--Update the list of images-->
+    <ul>
+      <li *ngFor="let slide of slides; let index = index;">
+        slide {{index+1}}
+        <!--Adding Delete button-->
+        <button (click)="deleteSlide(index)"><i class="fa fa-trash"></i></button>
+      </li>
+    </ul>
+  </div><br>
+  
+  <!--Add slide Section-->
+  <div class="add-slide">
+    <h3>Add new slide</h3>
+    <!--Getting the Url and Caption for the slide image-->
+    <form (ngSubmit)="addSlide()" #slideForm="ngForm">
+      <div>
+        <label class="mb-2">Image url</label><br>
+      <input type="text" name="imageUrl" [(ngModel)]="newSlide.imageUrl" required size="180">
+      </div>
+      <br>
+      <label class="mb-2">Slide Caption</label><br>
+      <input type="text" name="caption" [(ngModel)]="newSlide.caption" required size="180"><br>
+      <!--Submit button-->
+      <button type="submit" class="add-btn mt-3" >Add Slide</button>
+    </form>
+  </div>
+
+</div>

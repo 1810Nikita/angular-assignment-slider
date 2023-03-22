@@ -1,0 +1,37 @@
+//full page design 
+.full-page{
+    margin: 15px;
+}
+//display image section for both image and caption
+.carousel {
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    
+}
+//adjusting slide with fixed area
+.picsum-img-wrapper{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+//image styling
+.carousel img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+//styling button for both add silde button and delete
+button {
+    border : none;
+    background: none;
+}
+
+//styling add slide button
+.add-btn {
+    background-color: rgb(74, 74, 235);
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+}
